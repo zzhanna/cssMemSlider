@@ -1,11 +1,19 @@
+:root{
+   --color-container: #2e6c8b;
+   --color-body: #333333;
+}
+
+
+
+
 body{
-   background-color: lightslategrey;
+   background-color: var(--color-body);
 }
 
 .gif-container{
    max-width: 70vw;
    height: 80vh;
-   background-color:seagreen;
+   background-color: var(--color-container);
    border: 2vw solid #ffffff;
    box-shadow: 2vw 2vw 2vw rgba(0,0,0, 0.3);
    margin: 5vh auto;
@@ -15,27 +23,34 @@ body{
    justify-content: center;
 }
 
-
 .gif-wrapper{
    width: 25rem;
    height: 25rem;
    display: flex;
    flex-direction: row; 
-   /* overflow: hidden; */
    border-radius: 5%;
    margin-top: 6%;
+   clip-path: url(#clipping); /*маска*/   
+}
+/*размер маски*/
+.rect {
+   width: 25rem;
+   height: 30rem;
+   box-shadow: tomato;
 }
 
 .gif-wrapper img {
    max-width: none;
    min-width: auto;
    min-height: auto;
-   height: 100%;
+   height: 100%;   
 }
 
 .text{
    color: #ffffff;
    font-size: 1.5rem; 
+   margin-top: 0.2em;
+   
 }
 
 /* .first-slide{
@@ -53,9 +68,45 @@ body{
    flex-wrap: nowrap;
 }
 
-.input-container input{
-   width: 20px;
-   height: 20px;
-   font-size: 0px;
+input[type='radio'] {
+   position: relative;
+   height: 2em;
+   width: 2em;
+   appearance: none;
+   outline: none;
    cursor: pointer;
+}
+
+
+
+input[type='radio']::before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   height: 2em;
+   width: 2em;
+   border-radius: 50%;
+   transform: translate(-50%, -50%);
+   background-color: var(--color-body); 
+}
+
+input[type='radio']:checked::after {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   height: 1.5em;
+   width: 1.5em;
+   border-radius: 50%;
+   background-color: var(--color-container);
+   transform: translate(-50%, -50%); 
+}
+
+
+input[type='radio']:hover::before{
+   background-color: #ffffff;
+   height: 2em;
+   width: 2em;
+   border-radius: 50%;  
 }

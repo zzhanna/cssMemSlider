@@ -1,6 +1,7 @@
 :root{
    --color-container: #008fa5;
    --color-body: #45322E;
+   --font: 1.5rem;
 }
 
 
@@ -13,7 +14,7 @@ body{
    background-color: var(--color-container);
    border: 1.2em solid #ffffff;
    box-shadow: 2vw 2vw 2vw rgba(0,0,0, 0.3);
-   margin: 10vh auto;
+   margin: 7vh auto 2vh;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -38,7 +39,7 @@ body{
 /*размер маски*/
 .rect {
    width: 25rem;
-   height: 30rem;  
+   height: 25rem;  
 }
 
 .gif-wrapper img {
@@ -64,7 +65,7 @@ body{
 .text-gif div{
    margin-top: 0.2em;
    color: #ffffff;
-   font-size: 1.5rem; 
+   font-size: var(--font); 
    width: 75em; 
    height: 2em;
 }
@@ -179,4 +180,67 @@ label:hover{
 }
 
 
+@media (max-width: 510px) {
+   :root{
+   --font: 1rem;
+   }
+
+
+   .gif-container{
+      max-height: 26em;
+      border: 0.5em solid #ffffff;
+      margin: 10vh 2vw;
+   }
+
+   .gif-label-wrapper {
+      width: 18em;
+  }
+   .gif-wrapper{
+   width: 14rem;
+   height: 14rem;
+}
+   .rect {
+   width: 14rem;
+   height: 14rem;
+}
+
+.label{
+   height: 1.5em;
+   width: 1.5em;
+   top: 0%;
+   left: 15%;
+}
+
+#radio1:checked ~ .gif-container .input-container .label1::after,
+#radio2:checked ~ .gif-container .input-container .label2::after,
+#radio3:checked ~ .gif-container .input-container .label3::after,
+#radio4:checked ~ .gif-container .input-container .label4::after {
+   width: 1em;
+    height: 1em;
+}
+
+label:hover{
+   height: 1.5em;
+   width: 1.5em;
+}
+
+.text-label-container{
+   flex-direction: column-reverse;
+   margin-left: 2em;
+}
+#radio2:checked ~ .gif-container .gif-wrapper .slide1{
+   margin-left: -17em;
+   transition: ease-in-out 1s;
+}
+#radio3:checked ~ .gif-container .gif-wrapper .slide1{
+   margin-left: -31.5em;
+   transition: ease-in-out 1s;
+}
+#radio4:checked ~ .gif-container .gif-wrapper .slide1{
+   /* transform: translateX(-225%);    */
+   margin-left: -49em;
+   transition: ease-in-out 1s;
+}
+
+}
 

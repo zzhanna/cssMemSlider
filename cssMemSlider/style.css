@@ -149,6 +149,12 @@ label:hover{
    width: 2em;
    border-radius: 50%;  
 }
+label:active{
+   background-color: greenyellow;
+   height: 2em;
+   width: 2em;
+   border-radius: 50%;  
+}
 
 #radio1:checked ~ .gif-container .gif-wrapper .slide1,
 #radio1:checked ~ .gif-container .gif-label-wrapper .text-label-container .text-gif .text1{

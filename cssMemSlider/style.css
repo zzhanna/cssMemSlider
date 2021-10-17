@@ -1,12 +1,19 @@
+
+
 :root{
    --color-container: #008fa5;
    --color-body: #45322E;
-   --font: 1.5rem;
+   --font: 1.4rem;
 }
 
-
+@font-face {
+   font-family: NotoSansMono;
+   src: url("NotoSansMono_Condensed-Regular.ttf");
+   font-weight: 300;
+ }
 body{
    background-color: var(--color-body);
+   font-family: NotoSansMono;
 }
 .gif-container{
    max-width: 50em;
@@ -38,21 +45,20 @@ body{
 
 /*размер маски*/
 .rect {
-   width: 25rem;
-   height: 25rem;  
+   width: 25em;
+   height: 25em;  
 }
 
 .gif-wrapper img {
-   max-width: none;
-   min-width: auto;
-   min-height: auto;
-   height: 100%;
+   width: 25em;
+   height: 25em;  
+   object-fit: cover;
 }
 
-.slide4 img{
+/* .slide4 img{
    width: 25rem;
    overflow: hidden ;  
-}
+} */
 
 .text-label-container{
    display: flex;
@@ -62,21 +68,21 @@ body{
     justify-content: space-between;
 }
 
-.text-gif div{
-   margin-top: 0.2em;
+.text div{
    color: #ffffff;
    font-size: var(--font); 
-   width: 75em; 
-   height: 2em;
+   word-wrap: break-word;
+   width: 9em;
+   line-height: 1em;
 }
 
 .text-gif{
    overflow: hidden;
 }
 
-.text{
-  
+.text{  
     display: flex;
+    width: 100em;
 }
 
 input{
@@ -146,36 +152,36 @@ label:hover{
 
 #radio1:checked ~ .gif-container .gif-wrapper .slide1,
 #radio1:checked ~ .gif-container .gif-label-wrapper .text-label-container .text-gif .text1{
-   /* transform: translateX(-225%);    */
    margin-left: 0em;
    transition: ease-in-out 1s;
 }
 
-#radio2:checked ~ .gif-container .gif-wrapper .slide1,
-#radio2:checked ~ .gif-container .gif-label-wrapper .text-label-container .text-gif .text1{
+#radio2:checked ~ .gif-container .gif-wrapper .slide1{
    margin-left: -25em;
    transition: ease-in-out 1s;
 }
 
+#radio2:checked ~ .gif-container .gif-label-wrapper .text-label-container .text-gif .text1{
+   margin-left: -9em;
+   transition: ease-in-out 1s;
+}
+
 #radio3:checked ~ .gif-container .gif-wrapper .slide1{
-   /* transform: translateX(-80%);    */
-   margin-left: -56.2em;
+    margin-left: -50em;
    transition: ease-in-out 1s;
 }
 #radio3:checked ~ .gif-container .gif-label-wrapper .text-label-container .text-gif .text1{
-   margin-left: -75em;
+   margin-left: -18em;
    transition: ease-in-out 0.9s;
 }
 
 #radio4:checked ~ .gif-container .gif-wrapper .slide1{
-   /* transform: translateX(-225%);    */
-   margin-left: -100em;
+   margin-left: -75em;
    transition: ease-in-out 1s;
 }
 
 #radio4:checked ~ .gif-container .gif-label-wrapper .text-label-container .text-gif .text1{
-   /* transform: translateX(-225%);    */
-   margin-left: -225em;
+   margin-left: -27em;
    transition: ease-in-out 0.7s;
 }
 
@@ -195,6 +201,10 @@ label:hover{
    .gif-label-wrapper {
       width: 18em;
   }
+  .gif-wrapper img{
+   width: 14rem;
+   height: 14rem;
+}
    .gif-wrapper{
    width: 14rem;
    height: 14rem;
@@ -216,7 +226,7 @@ label:hover{
 #radio3:checked ~ .gif-container .input-container .label3::after,
 #radio4:checked ~ .gif-container .input-container .label4::after {
    width: 1em;
-    height: 1em;
+   height: 1em;
 }
 
 label:hover{
@@ -227,18 +237,31 @@ label:hover{
 .text-label-container{
    flex-direction: column-reverse;
    margin-left: 2em;
+   height: 4em;
 }
-#radio2:checked ~ .gif-container .gif-wrapper .slide1{
-   margin-left: -17em;
+
+.text-gif{
+   width: 14em;
+   overflow: hidden;
+}
+.text div{
+   width: 14em;
+}
+
+#radio2:checked ~ .gif-container .gif-wrapper .slide1,
+#radio2:checked ~ .gif-container .gif-label-wrapper .text-label-container .text-gif .text1{
+   margin-left: -14em;
    transition: ease-in-out 1s;
 }
-#radio3:checked ~ .gif-container .gif-wrapper .slide1{
-   margin-left: -31.5em;
+
+#radio3:checked ~ .gif-container .gif-wrapper .slide1,
+#radio3:checked ~ .gif-container .gif-label-wrapper .text-label-container .text-gif .text1{
+   margin-left: -28em;
    transition: ease-in-out 1s;
 }
-#radio4:checked ~ .gif-container .gif-wrapper .slide1{
-   /* transform: translateX(-225%);    */
-   margin-left: -49em;
+#radio4:checked ~ .gif-container .gif-wrapper .slide1,
+#radio4:checked ~ .gif-container .gif-label-wrapper .text-label-container .text-gif .text1{
+   margin-left: -42em;
    transition: ease-in-out 1s;
 }
 
